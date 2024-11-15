@@ -42,7 +42,7 @@ text = "General
 Store"
 
 [node name="FarmGridContainer" type="Control" parent="CanvasLayer/UI"]
-z_index = -1
+z_index = -100
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -54,6 +54,7 @@ grow_vertical = 2
 scale = Vector2(13.0512, 9.90807)
 
 [node name="FarmGrid" type="GridContainer" parent="CanvasLayer/UI/FarmGridContainer"]
+z_index = -100
 layout_mode = 1
 offset_left = -15.7073
 offset_top = -6.86309
