@@ -1,12 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://c13i0kf6sa7tn"]
 
-[ext_resource type="Script" path="res://character.gd" id="1_xkh3p"]
-[ext_resource type="Texture2D" uid="uid://6de48bateqdn" path="res://Idle_Right_Down.png" id="2_i33xb"]
-[ext_resource type="PackedScene" uid="uid://ckprt80d57mru" path="res://gun.tscn" id="2_qadqf"]
-[ext_resource type="Script" path="res://HitboxComponent.gd" id="3_6fmx3"]
-[ext_resource type="Script" path="res://HealthComponent.gd" id="4_3qb5b"]
-[ext_resource type="Script" path="res://HealthBarComponent.gd" id="6_u0pq1"]
+[ext_resource type="Script" path="res://characters/character.gd" id="1_xkh3p"]
+[ext_resource type="Texture2D" uid="uid://6de48bateqdn" path="res://assets/Idle_Right_Down.png" id="2_i33xb"]
+[ext_resource type="PackedScene" uid="uid://ckprt80d57mru" path="res://weapons/gun.tscn" id="2_qadqf"]
+[ext_resource type="Script" path="res://components/HitboxComponent.gd" id="3_6fmx3"]
+[ext_resource type="Script" path="res://components/HealthComponent.gd" id="4_3qb5b"]
+[ext_resource type="Script" path="res://components/HealthBarComponent.gd" id="6_u0pq1"]
 [ext_resource type="Theme" uid="uid://sajn3lqt5d7p" path="res://default_theme.tres" id="7_m3h8i"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_54dyo"]
 size = Vector2(20, 29.0698)

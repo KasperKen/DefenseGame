@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqwl58faawonb"]
 
-[ext_resource type="Script" path="res://game.gd" id="1_cahjq"]
-[ext_resource type="PackedScene" uid="uid://c13i0kf6sa7tn" path="res://character.tscn" id="2_fxvev"]
-[ext_resource type="PackedScene" uid="uid://du1ga1uewu05" path="res://barn.tscn" id="4_eco7n"]
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_yl1dc"]
+[ext_resource type="PackedScene" uid="uid://c13i0kf6sa7tn" path="res://characters/character.tscn" id="2_2emw8"]
+[ext_resource type="PackedScene" uid="uid://du1ga1uewu05" path="res://buildings/barn.tscn" id="3_jp45m"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_cvwdn"]
 
 [node name="Game" type="Node2D"]
 scale = Vector2(1, 1.00883)
-script = ExtResource("1_cahjq")
+script = ExtResource("1_yl1dc")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -132,9 +132,9 @@ autostart = true
 position = Vector2(320, 177.434)
 scale = Vector2(9.39271, -337.239)
 
-[node name="Character" parent="." instance=ExtResource("2_fxvev")]
+[node name="Character" parent="." instance=ExtResource("2_2emw8")]
 position = Vector2(69, 196.267)
 
-[node name="Barn" parent="." instance=ExtResource("4_eco7n")]
+[node name="Barn" parent="." instance=ExtResource("3_jp45m")]
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

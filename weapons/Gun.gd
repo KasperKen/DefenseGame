@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var bullet_to_fire : PackedScene = load("res://bullet.tscn")
+@onready var bullet_to_fire : PackedScene = load("res://projectiles/bullet.tscn")
 @onready var BulletSpawnPoint : Marker2D = $GunSprite/BulletSpawnPoint
 @onready var CooldownTimer : Timer = $CooldownTimer
 @onready var RangeComponent : Area2D = $RangeComponent

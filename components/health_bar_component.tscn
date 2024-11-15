@@ -1,6 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://dhfwrgpqdib40"]
 
-[ext_resource type="Script" path="res://HealthBarComponent.gd" id="1_70x7m"]
+[ext_resource type="Script" path="res://components/HealthBarComponent.gd" id="1_70x7m"]
+
 
 [sub_resource type="Image" id="Image_o34xe"]
 data = {

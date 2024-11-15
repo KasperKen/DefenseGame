@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://du1ga1uewu05"]
 
-[ext_resource type="Texture2D" uid="uid://dop7vs4wv6dxb" path="res://icon.svg" id="1_todly"]
+[ext_resource type="Texture2D" uid="uid://dop7vs4wv6dxb" path="res://assets/icon.svg" id="1_todly"]
+
 
 [node name="Barn" type="Node2D"]
 

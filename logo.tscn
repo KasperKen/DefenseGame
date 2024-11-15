@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4k4xnt1aat0a"]
+[gd_scene load_steps=2 format=3 uid="uid://luo4m4yukidu"]
 
-[ext_resource type="Texture2D" uid="uid://brmhxr4rftuih" path="res://logo.png" id="1_wy70e"]
+[ext_resource type="Texture2D" uid="uid://brmhxr4rftuih" path="res://assets/logo.png" id="1_wy70e"]
 
 [node name="Logo" type="Sprite2D"]
 position = Vector2(2020, 1009)

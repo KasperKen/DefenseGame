@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var Enemy: PackedScene = load("res://enemy.tscn")
+@onready var Enemy: PackedScene = load("res://characters/enemy.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
