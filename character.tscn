@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://c13i0kf6sa7tn"]
+
+[ext_resource type="Script" path="res://character.gd" id="1_xkh3p"]
+[ext_resource type="Texture2D" uid="uid://6de48bateqdn" path="res://Idle_Right_Down.png" id="2_i33xb"]
+[ext_resource type="PackedScene" uid="uid://ckprt80d57mru" path="res://gun.tscn" id="2_qadqf"]
+[ext_resource type="Script" path="res://HitboxComponent.gd" id="3_6fmx3"]
+[ext_resource type="Script" path="res://HealthComponent.gd" id="4_3qb5b"]
+[ext_resource type="Script" path="res://HealthBarComponent.gd" id="6_u0pq1"]
+[ext_resource type="Theme" uid="uid://sajn3lqt5d7p" path="res://default_theme.tres" id="7_m3h8i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54dyo"]
+size = Vector2(20, 29.0698)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rm3gv"]
+size = Vector2(14.6632, 19.2772)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("health_component")]
+position = Vector2(1.52588e-05, -0.999969)
+scale = Vector2(1.84135, 1.94024)
+collision_mask = 2
+script = ExtResource("1_xkh3p")
+health_component = NodePath("HealthComponent")
+
+[node name="Gun" parent="." instance=ExtResource("2_qadqf")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_i33xb")
+hframes = 8
+
+[node name="Hitbox_Component" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
+collision_mask = 0
+script = ExtResource("3_6fmx3")
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox_Component"]
+position = Vector2(-8.28675e-06, 0.411685)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_54dyo")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-8.46386e-06, 0.515384)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_rm3gv")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("4_3qb5b")
+max_health = 200.0
+
+[node name="HealthbarComponent" type="ProgressBar" parent="." node_paths=PackedStringArray("health_component")]
+offset_right = 4.0
+offset_bottom = 27.0
+theme = ExtResource("7_m3h8i")
+script = ExtResource("6_u0pq1")
+health_component = NodePath("../HealthComponent")

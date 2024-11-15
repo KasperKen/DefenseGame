@@ -1,0 +1,140 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqwl58faawonb"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_cahjq"]
+[ext_resource type="PackedScene" uid="uid://c13i0kf6sa7tn" path="res://character.tscn" id="2_fxvev"]
+[ext_resource type="PackedScene" uid="uid://du1ga1uewu05" path="res://barn.tscn" id="4_eco7n"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_cvwdn"]
+
+[node name="Game" type="Node2D"]
+scale = Vector2(1, 1.00883)
+script = ExtResource("1_cahjq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ActionButtonContainer" type="Control" parent="CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 44.0
+offset_bottom = 5.0
+grow_horizontal = 2
+scale = Vector2(0.935455, 10.964)
+
+[node name="Store" type="Button" parent="CanvasLayer/UI/ActionButtonContainer"]
+layout_mode = 2
+offset_left = 576.19
+offset_top = 1.1857
+offset_right = 645.19
+offset_bottom = 55.1857
+scale = Vector2(1.17573, 0.0718381)
+text = "General
+Store"
+
+[node name="FarmGridContainer" type="Control" parent="CanvasLayer/UI"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(13.0512, 9.90807)
+
+[node name="FarmGrid" type="GridContainer" parent="CanvasLayer/UI/FarmGridContainer"]
+layout_mode = 1
+offset_left = -15.7073
+offset_top = -6.86309
+offset_right = 40.2927
+offset_bottom = 37.1369
+scale = Vector2(0.554398, 0.508515)
+columns = 5
+
+[node name="Button" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+icon = SubResource("CanvasTexture_cvwdn")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button2" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button4" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button5" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button6" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button7" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button8" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button9" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button10" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button11" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button12" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button13" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button14" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button15" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button16" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button17" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button18" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button19" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="Button20" type="Button" parent="CanvasLayer/UI/FarmGridContainer/FarmGrid"]
+layout_mode = 2
+
+[node name="SpawnTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 177.434)
+scale = Vector2(9.39271, -337.239)
+
+[node name="Character" parent="." instance=ExtResource("2_fxvev")]
+position = Vector2(69, 196.267)
+
+[node name="Barn" parent="." instance=ExtResource("4_eco7n")]
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

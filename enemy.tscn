@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://2pdnbxmbl7pi"]
+
+[ext_resource type="Script" path="res://Enemy.gd" id="1_2x2gi"]
+[ext_resource type="Texture2D" uid="uid://brmhxr4rftuih" path="res://logo.png" id="2_4yll6"]
+[ext_resource type="Script" path="res://HitboxComponent.gd" id="3_ful2j"]
+[ext_resource type="Script" path="res://HealthComponent.gd" id="4_afsb5"]
+[ext_resource type="Script" path="res://AttackComponent.gd" id="5_k831u"]
+[ext_resource type="Script" path="res://HealthBarComponent.gd" id="6_sd7po"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_topwf"]
+radius = 15.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ehne"]
+radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wxwpk"]
+radius = 9.05539
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3blbl"]
+radius = 29.2746
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("health_component")]
+collision_layer = 2
+collision_mask = 3
+input_pickable = true
+script = ExtResource("1_2x2gi")
+health_component = NodePath("HealthComponent")
+
+[node name="EnemyBufferCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -2)
+shape = SubResource("CircleShape2D_topwf")
+
+[node name="EnemySprite" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, -5)
+scale = Vector2(0.539062, 0.460938)
+texture = ExtResource("2_4yll6")
+
+[node name="EnemyCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7ehne")
+
+[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("health_component")]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_ful2j")
+health_component = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_wxwpk")
+
+[node name="AttackComponent" type="Area2D" parent="."]
+collision_layer = 0
+script = ExtResource("5_k831u")
+cooldown_time = 0.5
+
+[node name="CooldownTimer" type="Timer" parent="AttackComponent"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_3blbl")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("4_afsb5")
+max_health = 10.0
+
+[node name="HealthbarComponent" type="ProgressBar" parent="." node_paths=PackedStringArray("health_component")]
+offset_right = 4.0
+offset_bottom = 27.0
+script = ExtResource("6_sd7po")
+health_component = NodePath("../HealthComponent")
+
+[connection signal="timeout" from="AttackComponent/CooldownTimer" to="AttackComponent" method="_on_cooldown_timer_timeout"]

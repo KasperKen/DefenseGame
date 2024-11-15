@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4k4xnt1aat0a"]
+
+[ext_resource type="Texture2D" uid="uid://brmhxr4rftuih" path="res://logo.png" id="1_wy70e"]
+
+[node name="Logo" type="Sprite2D"]
+position = Vector2(2020, 1009)
+scale = Vector2(2.4375, 2.03125)
+texture = ExtResource("1_wy70e")
